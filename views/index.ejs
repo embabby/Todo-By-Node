@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<title>TodoList App</title>
+
+	<style>
+		body{
+			background-color: #555;
+			color: white;
+		}
+		h1{
+			margin-top: 10rem;
+		}
+		form{
+			margin-bottom: 2rem;
+		}
+		ul{
+			// list-style-type: none;
+			padding-top: 20px;
+		}
+		li{
+			padding-left: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-dark bg-dark" style="background-color: #e3f2fd">
+		<a class="navbar-brand" href="#">
+			<i class="fa fa-check-circle"></i>
+			TodoList
+		</a>
+	</nav>
+
+	<div class="container">
+		<row>
+			<h1 class="text-center">Enter todo item</h1>
+			<form class="col-6 mx-auto" action="/newtodo" method="post">
+				<div class="input-group">
+					<input required="required" type="text" class="form-control" name="item" placeholder="Enter todo item"> <span> <button type="submit" class="btn btn-primary">Submit</button> </span>
+				</div>
+			</form>
+		</row>
+		<div class="row">
+			<ul class="col-6 mx-auto">
+				<% for(var i= 0; i < todoList.length; i++) { %>
+				<li> <%= todoList[i].name %> </li>
+			<% } %>
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>
